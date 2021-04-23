@@ -1,0 +1,108 @@
+.box-navigation{
+  width: 300px;
+  height: 100%;
+  margin-right: 40px;
+  position: fixed;
+  .menu_responsive{
+    display: none;
+    .icon{
+      display: none;
+    }
+   }
+  .navigation {
+    width: 100%;
+    background: #f44336;
+    height: 100%;
+    &--header{
+      .header-close{
+        display: none;
+        padding: 0;
+        font-size: 22px;
+        color: white;
+        margin: 20px 0px 0px 100px;
+      }
+      .header-title{
+        margin-top: 0;
+        padding-top: 64px !important;
+        padding-bottom: 64px !important;
+        font-size: 35px;
+        color: white;
+        margin-left: 5%;
+        width: 80%;
+      }
+    }
+    &--menu{
+      margin-left: -10%;
+      .menu--text{
+        list-style-type: none;
+        padding: 10px 30px 10px 15px;
+        width: 80%;
+        a{
+          padding: 10px 30px 10px 0px;
+          font-weight: bold;
+          font-size: 18px;
+          text-decoration: none;
+          color: white;
+          width: 80%;
+        }
+        &:hover {
+          background: white;
+          width: 78%;
+        }
+        &:hover a {
+          color: black;
+          font-size: 18px;
+          font-weight: bold;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .box-navigation{
+    width: 100%;
+  }
+  .menu_responsive {
+    position: absolute;
+    display: flex !important;
+    background: red;
+    padding: 5px;
+    width: 100%;
+    .menu--icon, .menu--title{
+      margin-left: 20px;
+      padding-top: 10px !important;
+      padding-bottom: 10px !important;
+      font-size: 24px;
+      color: white;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+  .navigation {
+    display: none;
+    position: absolute;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+   .box-navigation{
+     width: 100%;
+   }
+  .menu_responsive {
+    position: absolute;
+    display: flex !important;
+    background: red;
+    padding: 5px;
+    width: 100%;
+    .menu--icon, .menu--title{
+      margin-left: 20px;
+      padding-top: 15px !important;
+      padding-bottom: 15px !important;
+      font-size: 24px;
+      color: white;
+    }
+  }
+
+}

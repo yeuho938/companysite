@@ -1,0 +1,283 @@
+@mixin paddingLeft {
+  padding-left: 6%;
+}
+
+@mixin marginTop {
+  margin-top: 6%;
+}
+
+%width100 {
+  width: 100%;
+}
+
+%titleTable {
+  color: white;
+  padding: 35px 0px 35px 0px;
+  text-align: center;
+  width: 100%;
+  font-size: 24px;
+}
+
+%itemTable {
+  list-style-type: none;
+  padding: 20px 0;
+  background: #f1f1f1 !important;;
+  text-align: center;
+  @extend %width100;
+  margin-left: 0px;
+  border-bottom: 1px solid #ddd;
+}
+
+%tableButton {
+  border: none;
+  padding: 15px 20px;
+  font-size: 16px;
+}
+
+%tableButtonHover {
+  background: black;
+  color: white;
+}
+
+%contactLabelInput {
+  height: 40px;
+  padding: 0;
+  margin: 0;
+  margin-top: 10px;
+  display: block;
+  @extend %width100;
+}
+
+$redColor: #f44336;
+
+.box-content {
+  width: 80%;
+  overflow: auto;
+  float: right;
+  .content {
+    width: 94%;
+    height: 100%;
+
+    &--services {
+      margin-top: 5%;
+    }
+  }
+}
+.underline{
+  width:50px;
+  border:5px solid red;
+  float: left;
+  borderRadius: 20px;
+}
+.content--showcase {
+  @extend %width100;
+
+  .showcase {
+    &--caption-text {
+      font-size: 64px;
+      padding-top: 30px;
+      margin: 30px 0px;
+    }
+
+    &--image {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-column-gap: 1.5%;
+      grid-row-gap: 1%;
+      @extend %width100;
+
+      .img {
+        opacity: 0.8;
+        @extend %width100;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+.content--designers {
+  @include marginTop;
+
+  .designer--card {
+    @extend %width100;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 1.5%;
+
+    .card {
+      background-color: #f1f1f1;
+
+      &--nameJob {
+        @include paddingLeft;
+        color: #888888;
+      }
+
+      &--namePeople {
+        @include paddingLeft;
+      }
+
+      &--context {
+        @include paddingLeft;
+      }
+
+      &--img {
+        @extend %width100;
+      }
+    }
+  }
+}
+
+.content--packages {
+  @include marginTop;
+
+  .package--table {
+    @extend %width100;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 1.5%;
+
+    .table--listItem {
+      padding: 0;
+    }
+
+    .tableLeft {
+      @extend %width100;
+      padding-left: 0;
+
+      &--title {
+        background: #616161;
+        @extend %titleTable;
+      }
+
+      &--item {
+        @extend %itemTable;
+      }
+
+      &--buttonItem {
+        @extend %tableButton;
+        background: white;
+        color: black;
+
+        &:hover {
+          @extend %tableButtonHover;
+        }
+      }
+    }
+
+    .tableRight {
+      @extend %width100;
+      padding-left: 0px;
+
+      &--title {
+        background: $redColor;
+        @extend %width100;
+        @extend %titleTable;
+      }
+
+      &--item {
+        @extend %itemTable;
+      }
+
+      &--buttonItem {
+        @extend %tableButton;
+        background: $redColor;
+        color: white;
+
+        &:hover {
+          @extend %tableButtonHover;
+        }
+      }
+    }
+  }
+}
+
+// CONTACT
+.content--contact {
+  @include marginTop;
+
+  .form {
+    &--label {
+      @extend %contactLabelInput;
+    }
+
+    &--input {
+      @extend %contactLabelInput;
+      border: 1px solid #ccc;
+    }
+
+    &--button {
+      @extend %width100;
+      margin-top: 1%;
+      background: $redColor;
+      padding: 15px;
+      outline: none;
+      border: none;
+      font-size: 16px;
+      color: white;
+    }
+
+    &--button:hover {
+      background-color: #999999;
+    }
+  }
+}
+
+
+
+@media only screen and (max-width: 600px) {
+  .box-content{
+    width: 100% !important;
+    margin-right: 20px!important;
+    margin-left: 20px!important;
+    .content{
+      width: 100% !important;
+      margin-left: 40px;
+    }
+    .modal{
+      background-color: rebeccapurple;
+    }
+  }
+  .showcase--image {
+    display: grid;
+    grid-template-columns: 1fr !important;
+    grid-column-gap: 5%;
+    grid-row-gap: 1%;
+    width: 100%;
+  }
+  .designer--card {
+    display: grid;
+    grid-template-columns: 1fr !important;
+    grid-column-gap: 3%;
+  }
+    .package--table {
+      display: grid;
+      grid-template-columns: 1fr!important;
+      grid-column-gap: 3%;
+    }
+}
+@media only screen and (max-width: 991px) {
+  .box-content {
+    width: 100% !important;
+    margin-right: 20px!important;
+    margin-left: 20px!important;
+    .content {
+      width: 100% !important;
+      margin-left: 40px;
+    }
+  }
+  .modal{
+    position: absolute;
+    margin-right: 100px!important;
+    background: grey;
+    -webkit-filter: blur(10px);
+    -moz-filter: blur(11px);
+    -o-filter: blur(1px);
+    -ms-filter: blur(1px);
+    filter: blur(1px);
+    transform: scale(1.2, 1.2);
+    width: 80%;
+  }
+}

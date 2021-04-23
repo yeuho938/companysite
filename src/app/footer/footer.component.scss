@@ -1,0 +1,15 @@
+
+/* Footer*/
+
+.footer {
+  width: 100%;
+  background-color: #f44336;
+  margin-top: 5%;
+  &--text {
+    float: right;
+    margin-right: 1%;
+  }
+  &--link {
+    color: black;
+  }
+}

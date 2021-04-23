@@ -1,0 +1,16 @@
+<div class="box-navigation">
+  <div class="menu_responsive">
+    <p class="menu--icon" (click)="openMenu()"><i class="fas fa-bars"></i></p>
+    <p class="menu--title"> Company name</p>
+  </div>
+  <div class="navigation" [style]="{display:displayNav, width: widthNav}">
+    <div class="navigation--header">
+      <a (click)="closeMenu()" class="header-close" [style]="{display: closeTextMenu}"> Close Menu</a>
+      <p class="header-title"> Company name</p>
+    </div>
+    <ul class="navigation--menu" *ngFor="let menutext of menuText">
+      <li class="menu--text"><a href="#{{menutext}}">{{menutext | titlecase}}</a></li>
+    </ul>
+  </div>
+</div>
+

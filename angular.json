@@ -1,5 +1,8 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": "ddc4fb18-9415-46d4-893f-b58d4b00fc35"
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
@@ -118,6 +121,11 @@
           }
         }
       }
+    }
+  },
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
     }
   },
   "defaultProject": "company-site"
